@@ -204,7 +204,7 @@ class Link
     public function export()
     {
         $exportFields = [
-            'id', 'title', 'slashtag', 'destination', 'shortUrl', 'domain',
+            'id', 'title', 'slashtag', 'destination', 'shortUrl',
             'status', 'createdAt', 'updatedAt', 'clicks', 'lastClickAt',
             'favourite', 'forwardParameters'
         ];
@@ -216,6 +216,10 @@ class Link
                 $linkArray[$fieldName] = $value;
             }
         }
+		if ($this->getDomain()) {
+			$linkArray['domain'] = $this->getDomain()->export();
+		}
+
         return $linkArray;
     }
 }
