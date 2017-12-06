@@ -189,7 +189,7 @@ class Link
     {
         $link = new Link;
 
-        foreach ($linkArray as $key => $value) {
+        foreach ((array)$linkArray as $key => $value) {
             $link->$key = $value;
         }
 

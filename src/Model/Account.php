@@ -61,7 +61,7 @@ class Account
     {
         $account = new Account;
 
-        foreach ($accountArray as $key => $value) {
+        foreach ((array)$accountArray as $key => $value) {
             $account->$key = $value;
         }
 

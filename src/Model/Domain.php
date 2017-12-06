@@ -114,7 +114,7 @@ class Domain
     {
         $domain = new Domain;
 
-        foreach ($domainArray as $key => $value) {
+        foreach ((array)$domainArray as $key => $value) {
             $domain->$key = $value;
         }
 
